@@ -52,8 +52,6 @@ The search functionality disappears entirely on smaller viewports.
 
 ![alt text](image-2.png) ![alt text](image-1.png)
 
-![alt text](image-5.png)
-
 **Recommendation:** Introduce a collapsible navigation drawer triggered by a hamburger menu. Move search, settings, theme selector, and navigation links into this drawer for mobile users.
 
 **Recommendation:** Hide the sidebar on mobile and tablet, keeping it for desktop only. Use the new collapsible menu as the mobile alternative.
@@ -61,6 +59,10 @@ The search functionality disappears entirely on smaller viewports.
 **Recommendation:** Relocate search into the collapsible navigation drawer. Provide an accessible icon button in the header to trigger the drawer and focus the search input automatically.
 
 ![alt text](image-3.png)![alt text](image-4.png)
+
+### Applied
+
+![alt text](image-5.png)
 
 ### 4. Unresponsive Tables
 
