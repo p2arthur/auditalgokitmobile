@@ -74,16 +74,21 @@ Data tables overflow horizontally with no visual indicators.
 
 ### 5. Grid Layouts
 
+![alt text](image-10.png)
+
 Multi-column grids do not adjust gracefully on mobile, causing visual imbalance.  
 **Recommendation:** Reduce to a single-column layout on smaller screens and adjust spacing.
 
 ### 6. Description Lists
+
+![alt text](image-11.png)
 
 Two-column layouts become cramped, squeezing text into unreadable widths.  
 **Recommendation:** Stack label-value pairs vertically on mobile and use smaller typography.
 
 ### 7. Touch Targets and Interaction
 
+![alt text](image-12.png) ![alt text](image-13.png)
 Buttons and form inputs may not meet accessibility standards for touch.  
 **Recommendation:** Ensure a minimum target size of 44x44px. Increase padding for mobile elements.
 
