@@ -36,12 +36,10 @@
 
 ## 2. High-Priority Findings
 
-### 1. Header/Nabber Cramping
+### 1. Header/Topbar Cramping
 
 On smaller screens, elements like the logo, search bar, network selector, and wallet connection button become too cramped or overflow.  
 **Recommendation:** Introduce a collapsible navigation drawer triggered by a hamburger menu. Move search, settings, theme selector, and navigation links into this drawer for mobile users.
-
-![alt text](image.png)
 
 ### 2. Sidebar Space Usage
 
@@ -52,6 +50,8 @@ The sidebar remains visible on all screen sizes, taking excessive space on mobil
 
 The search functionality disappears entirely on smaller viewports.  
 **Recommendation:** Relocate search into the collapsible navigation drawer. Provide an accessible icon button in the header to trigger the drawer and focus the search input automatically.
+
+![alt text](image.png) ![alt text](image-1.png)
 
 ### 4. Unresponsive Tables
 
