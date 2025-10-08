@@ -50,7 +50,9 @@ The sidebar remains visible on all screen sizes, taking excessive space on mobil
 
 The search functionality disappears entirely on smaller viewports.
 
-![alt text](image-2.png)![alt text](image-1.png)
+![alt text](image-2.png) ![alt text](image-1.png)
+
+![alt text](image-5.png)
 
 **Recommendation:** Introduce a collapsible navigation drawer triggered by a hamburger menu. Move search, settings, theme selector, and navigation links into this drawer for mobile users.
 
