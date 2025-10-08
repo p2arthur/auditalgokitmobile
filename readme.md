@@ -28,7 +28,7 @@
 
 ### Global Spacing Defaults
 
-- **Mobile:** padding 2
+- **Mobile:** padding 4
 - **Tablet+:** padding 4  
   This ensures content remains readable without excessive margins.
 
