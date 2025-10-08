@@ -66,8 +66,11 @@ The search functionality disappears entirely on smaller viewports.
 
 ### 4. Unresponsive Tables
 
-Data tables overflow horizontally with no visual indicators.  
-**Recommendation:** Implement mobile-friendly display patterns—either stacked “card” layouts or scrollable tables with visual cues. Consider allowing column visibility toggles by breakpoint.
+Data tables overflow horizontally with no visual indicators.
+
+![alt text](image-7.png)
+
+**Recommendation:** Implement mobile-friendly display patterns—either stacked “card” layouts or scrollable tables with visual cues. **Consider allowing column visibility toggles by breakpoint**.
 
 ### 5. Grid Layouts
 
