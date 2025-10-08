@@ -50,7 +50,7 @@ The sidebar remains visible on all screen sizes, taking excessive space on mobil
 
 The search functionality disappears entirely on smaller viewports.
 
-![alt text](image-2.png) ![alt text](image-1.png)
+![alt text](image-2.png) ![alt text](image-6.png)
 
 **Recommendation:** Introduce a collapsible navigation drawer triggered by a hamburger menu. Move search, settings, theme selector, and navigation links into this drawer for mobile users.
 
@@ -136,9 +136,8 @@ Large gaps optimized for desktop make mobile layouts excessively tall.
 
 ### Spacing and Padding
 
-- Default container padding should scale with breakpoints:
-  - `p-2` on mobile
-  - `p-4` on tablet and above
+- ## Default container padding should scale with breakpoints:
+  - `p-4` on Desktop, tablet and mobile - keep same padding
 
 ### Typography
 
@@ -207,24 +206,7 @@ Projects depending on older browsers or legacy utilities must test and adjust ac
 4. **Validation**
    - Perform visual regression testing across mobile, tablet, and desktop.
 
----
-
-## 7. Screenshot Placeholders
-
-Use these areas to insert annotated images showing specific layout issues:
-
-- **Screenshot A – Navbar on Mobile:**  
-  _Insert image here. Describe element overlap and cramped layout._
-
-- **Screenshot B – Sidebar Overflow:**  
-  _Insert image here. Note how sidebar pushes content offscreen._
-
-- **Screenshot C – Table Overflow:**  
-  _Insert image here. Highlight missing scroll cues and readability issues._
-
----
-
-## 8. Acceptance Criteria
+## 7. Acceptance Criteria
 
 - Inventory of all components requiring mobile optimization.
 - Specific solutions documented for each responsive issue.
@@ -239,11 +221,6 @@ Use these areas to insert annotated images showing specific layout issues:
 
 1. Validate the audit findings with screenshots and confirm affected components.
 2. Approve proposed navigation restructuring and layout strategy.
-3. Begin development of the new responsive layout (drawer, search relocation).
-4. Schedule Tailwind v4 migration after core layout fixes are stable.
+3. Schedule Tailwind v4 migration after core layout fixes are stable.
+4. Begin development of the new responsive layout (drawer, search relocation).
 5. Establish QA sessions for testing responsiveness on major mobile devices.
-
----
-
-**Prepared for:** AlgoKit Lora Team  
-**Purpose:** Research and planning document — no code changes during this phase.
