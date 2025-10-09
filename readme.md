@@ -72,6 +72,22 @@ Data tables overflow horizontally with no visual indicators.
 
 **Recommendation:** Implement mobile-friendly display patterns—either stacked “card” layouts or scrollable tables with visual cues. **Consider allowing column visibility toggles by breakpoint**.
 
+### 5. Unresponsive Latest block cards
+
+![alt text](image-15.png)
+
+**Recommendation:** Rearrange card layouts to have two rows instead of two columns
+
+![alt text](image-16.png)
+
+### 6. Unresponsive Latest Transaction cards
+
+![alt text](image-17.png)
+
+**Recommendation:** Rearrange card layouts to have two rows instead of two columns
+
+![alt text](image-16.png)
+
 ### 5. Grid Layouts
 
 ![alt text](image-10.png)
@@ -88,9 +104,12 @@ Two-column layouts become cramped, squeezing text into unreadable widths.
 
 ### 7. Touch Targets and Interaction
 
-![alt text](image-12.png) ![alt text](image-13.png)
-Buttons and form inputs may not meet accessibility standards for touch.  
-**Recommendation:** Ensure a minimum target size of 44x44px. Increase padding for mobile elements.
+![alt text](image-14.png)
+Buttons and form inputs may not meet accessibility standards for touch.
+
+- switch.tsx
+
+  **Recommendation:** Ensure a minimum target size of 44x44px. Increase padding for mobile elements.
 
 ### 8. Container Padding
 
