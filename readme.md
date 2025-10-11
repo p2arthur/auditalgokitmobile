@@ -1,4 +1,4 @@
-# AlgoKit Lora — Mobile Responsiveness Audit (v0.1)
+# AlgoKit Lora — Mobile Responsiveness Audit (v0.2)
 
 ## 1. Scope and Goals
 
@@ -14,224 +14,201 @@
 
 ### Goals
 
-- Ensure the application is fully usable and visually consistent across mobile, tablet, and desktop devices.
-- Remove visual overflow, cramped elements, and poor spacing across small screens.
-- Unify responsive spacing and typography across all breakpoints.
-- Introduce a mobile-first design approach compatible with Tailwind v4’s container queries and theming features.
+- Ensure the application is fully usable and visually consistent across all devices.
+- Eliminate layout overflow and cramped elements on mobile.
+- Adopt a mobile-first structure using Tailwind v4’s improved utilities and container queries.
+- Simplify and unify spacing and typography across breakpoints.
 
 ### Recommended Breakpoints
 
 - **Mobile:** <640px
 - **Tablet:** 640–1024px
 - **Desktop:** >1024px
-- **XL Desktop:** >1280px (optional, for wide tables or development tools)
-
-### Global Spacing Defaults
-
-- **Mobile:** padding 4
-- **Tablet+:** padding 4  
-  This ensures content remains readable without excessive margins.
+- **XL Desktop:** >1280px (optional)
 
 ---
 
-## 2. High-Priority Findings
-
-## Layout
+## 2. Key Findings
 
 ### 1. Header/Topbar Cramping
 
-On smaller screens, elements like the logo, search bar, network selector, and wallet connection button become too cramped or overflow.
+On smaller screens, elements like the logo, search bar, network selector, and wallet button overlap or overflow.
 
 ### 2. Sidebar Space Usage
 
-The sidebar remains visible on all screen sizes, taking excessive space on mobile.
+The sidebar remains visible on mobile, consuming excessive space and pushing content.
 
 ### 3. Hidden Search on Mobile
 
-The search functionality disappears entirely on smaller viewports.
+The search bar disappears completely on small viewports.
 
 ![alt text](image-2.png) ![alt text](image-6.png)
 
-**Recommendation:** Introduce a collapsible navigation drawer triggered by a hamburger menu. Move search, settings, theme selector, and navigation links into this drawer for mobile users.
+**Recommendation:**  
+Move the sidebar to a **collapsible drawer** triggered by a hamburger menu. Relocate the search, theme selector, and settings inside this drawer for mobile use.
 
-**Recommendation:** Hide the sidebar on mobile and tablet, keeping it for desktop only. Use the new collapsible menu as the mobile alternative.
-
-**Recommendation:** Relocate search into the collapsible navigation drawer. Provide an accessible icon button in the header to trigger the drawer and focus the search input automatically.
+**Recommendation:**  
+Keep the sidebar visible only on desktop.  
+Use a minimal header with compact logo, screen title, and essential icons.
 
 ![alt text](image-3.png)![alt text](image-4.png)
 
-### Applied
+### Applied Example
 
 ![alt text](image-5.png)
 
+---
+
 ### 4. Unresponsive Tables
 
-Data tables overflow horizontally with no visual indicators.
+Data tables overflow horizontally without scroll cues.
 
 ![alt text](image-7.png)
 
-**Recommendation:** Implement mobile-friendly display patterns—either stacked “card” layouts or scrollable tables with visual cues. **Consider allowing column visibility toggles by breakpoint**.
+**Recommendation:**  
+Enable horizontal scrolling with clear visual indicators. For mobile, use stacked card layouts when necessary.
 
-### 5. Unresponsive Latest block cards
+---
+
+### 5. Unresponsive “Latest Block” and “Latest Transaction” Cards
 
 ![alt text](image-15.png)
 
-**Recommendation:** Rearrange card layouts to have two rows instead of two columns
-
-### 6. Unresponsive Latest Transaction cards
+**Recommendation:**  
+Switch to a vertical (two-row) layout on smaller screens.  
+This issue is largely resolved by hiding the sidebar on mobile.
 
 ![alt text](image-17.png)
-
-**Recommendation:** Rearrange card layouts to have two rows instead of two columns
-
 ![alt text](image-16.png)
 
-### 7. Grid Layouts
+---
 
-![alt text](image-10.png)
+### 6. Grid and Description Lists
 
-Multi-column grids do not adjust gracefully on mobile, causing visual imbalance.  
-**Recommendation:** Reduce to a single-column layout on smaller screens and adjust spacing. - **Hidding sidebar in the mobil version provides good part of the solution for this**
-
-### 8. Description Lists
-
+![alt text](image-10.png)  
 ![alt text](image-11.png)
 
-Two-column layouts become cramped, squeezing text into unreadable widths.  
-**Recommendation:** Stack label-value pairs vertically on mobile and use smaller typography. - **Hidding sidebar in the mobil version provides good part of the solution for this**
+Multi-column grids and two-column lists become cramped on small screens.  
+**Recommendation:** Collapse into a single-column layout and allow more vertical spacing.  
+Hiding the sidebar improves this naturally.
 
-### 9. Touch Targets and Interaction
+---
+
+### 7. Touch Targets and Typography
 
 ![alt text](image-14.png)
-Buttons and form inputs may not meet accessibility standards for touch.
 
-- switch.tsx
+Buttons and form inputs may be too small for mobile touch interactions.  
+Headings and text spacing are also optimized for desktop and feel oversized on mobile.
 
-  **Recommendation:** Ensure a minimum target size of 44x44px. Increase padding for mobile elements.
+**Recommendation:**  
+Increase tap area, and reduce heading sizes with better line height.  
+Sidebar removal provides enough room for these fixes.
 
-### 11. Typography Scaling
+---
 
-Heading sizes and text spacing optimized for desktop appear too large on mobile.  
-**Recommendation:** Reduce font sizes and increase line heights for better readability on smaller screens. - **Hidding sidebar in the mobile version provides good part of the solution for this**
-
-### 13. Modal and Overlay Testing
+### 8. Modals and Overlays
 
 ![alt text](image-18.png)
 
-Modal content container can be better utilized,Touch targets may be small for mobile devices
-**Recommendation:** Test and redesign modals to adapt as full-width sheets on smaller screens.
+Modals could better adapt to mobile screens.  
+**Recommendation:** Convert to full-width sheets on smaller devices.
 
-### 15. Column Visibility Controls
+---
 
-All table columns render by default, overwhelming small screens.
+### 9. Table Column Visibility
+
 ![alt text](image-19.png)
 
-**Recommendation:** Introduce a simple scroll to enable user to view more info about the transaction without breaking other parts of the layout .
+All table columns render by default, overwhelming small screens.
+
+**Recommendation:**  
+Allow horizontal scroll or hide non-essential columns on mobile.
 
 ![alt text](image-20.png)
 
-### 16. Vertical Spacing
+---
 
-## 3. Recommended Information Architecture (Mobile-First)
+## 3. Layout Strategy (Mobile-First)
 
-### Mobile and Tablet Navigation
+### Mobile and Tablet
 
-- Replace the persistent sidebar with a collapsible drawer accessed via a hamburger menu.
-- Move search, navigation links, theme selector, and settings into the drawer.
-- Keep the header minimal with a compact logo, screen title, and essential icons (wallet and network).
+- Replace persistent sidebar with a **collapsible drawer** accessed via hamburger menu.
+- Move search, navigation links, theme selector, and settings into this drawer.
+- Keep a minimal topbar with logo, title, and key action icons.
 
-### Desktop Navigation
+### Desktop
 
-- Maintain the sidebar with its current layout and navigation hierarchy.
-- Keep main content centered and padded appropriately.
-
-### Spacing and Padding
-
-- ## Default container padding should scale with breakpoints:
-  - `p-4` on Desktop, tablet and mobile - keep same padding
-
-### Typography
-
-- Use smaller heading scales and increased line height on mobile.
-- Maintain clear visual hierarchy through consistent font sizing and weight.
+- Retain sidebar and main navigation as-is.
+- Maintain central content alignment and consistent padding.
 
 ---
 
-## 4. Component Audit Summary
+## 4. Component Summary
 
-| Area              | Current Issue                     | Recommended Fix                             | Effort      | Priority |
-| ----------------- | --------------------------------- | ------------------------------------------- | ----------- | -------- |
-| Topbar            | Elements overlap on small screens | Introduce collapsible navigation drawer     | Medium      | P0       |
-| Sidebar           | Visible on mobile                 | Hide on mobile; use drawer instead          | Small       | P0       |
-| Search            | Hidden on small screens           | Relocate into drawer                        | Small       | P0       |
-| Tables            | Overflow horizontally             | Implement card layouts or scroll indicators | Large       | P0       |
-| Grids             | Multi-column cramped              | Collapse to single column                   | Small       | P1       |
-| Description Lists | Two-column too tight              | Stack vertically                            | Small       | P1       |
-| Forms             | Small touch areas                 | Increase target sizes and spacing           | Medium      | P1       |
-| Containers        | Padding too large                 | Use responsive padding                      | Small       | P1       |
-| Typography        | Oversized on mobile               | Adjust font scaling                         | Small       | P2       |
-| Modals/Popovers   | Not optimized                     | Use full-width mobile sheets                | Medium      | P2       |
-| Scroll Indicators | Missing                           | Add shadows or gradients                    | Small       | P2       |
-| Column Visibility | All columns shown                 | Add breakpoint-based column controls        | Medium      | P2       |
-| Vertical Spacing  | Excessive                         | Reduce gaps per breakpoint                  | Extra Small | P2       |
+| Area               | Current Issue            | Recommended Fix               | Effort | Priority |
+| ------------------ | ------------------------ | ----------------------------- | ------ | -------- |
+| Topbar             | Overlapping elements     | Move search into drawer       | Medium | P0       |
+| Sidebar            | Visible on mobile        | Convert to collapsible drawer | Small  | P0       |
+| Tables             | Overflow on mobile       | Scrollable or stacked layout  | Large  | P0       |
+| Cards              | Two-column layout issues | Stack vertically              | Small  | P1       |
+| Grids/Descriptions | Cramped layouts          | Collapse into single column   | Small  | P1       |
+| Forms              | Small touch targets      | Increase spacing              | Medium | P1       |
+| Typography         | Oversized on mobile      | Adjust scales and line height | Small  | P2       |
+| Modals/Overlays    | Not optimized for mobile | Convert to full-width sheets  | Medium | P2       |
 
 ---
 
-## 5. Implementation Order (Gradual Plan)
+## 5. Implementation Order
 
-1. **Shell and Layout (P0):** Build the responsive header, collapsible drawer, and hide sidebar on mobile.
-2. **Search Functionality (P0):** Relocate search and ensure accessibility and focus behavior.
-3. **Data Tables (P0):** Redesign for mobile readability and scrolling behavior.
-4. **Spacing and Typography (P1):** Standardize padding and font scaling.
-5. **Forms and Touch Targets (P1):** Enhance usability for touch devices.
-6. **Grid and Description Lists (P1):** Refactor layouts for smaller screens.
-7. **Overlays (P2):** Redesign modals, drawers, and popovers for mobile.
-8. **Column Visibility and Scroll Indicators (P2):** Add visual cues and column toggles.
-
-This order allows for iterative rollout while maintaining stability and test coverage.
+1. **Tailwind v4 Upgrade** — foundation for all responsive fixes.
+2. **Layout Shell (P0):** Add collapsible drawer, hide sidebar on mobile.
+3. **Search Relocation (P0):** Move into drawer, add header trigger.
+4. **Tables (P0):** Add scroll or stacked layout for mobile.
+5. **Cards, Grids, Descriptions (P1):** Adjust to one-column layouts.
+6. **Forms & Typography (P1/P2):** Improve spacing and readability.
+7. **Overlays (P2):** Convert modals into adaptive sheets.
 
 ---
 
-## 6. Tailwind v4 Migration Context
+## 6. Tailwind v4 Migration
 
-Upgrading from **Tailwind 3.4.1** to **Tailwind 4.0** offers major speed and DX improvements:
+Upgrading from **v3.4.1 → v4.0** enables:
 
-- Up to 5× faster build performance.
-- Automatic content detection (no manual file paths).
-- Native CSS variable theming.
-- Support for container queries, 3D transforms, and modern color functions.
-- Adoption of newer CSS features such as cascade layers and `@property`.
+- Faster build times.
+- Automatic content detection.
+- CSS variable theming.
+- Container queries and color functions.
 
-However, migration requires reviewing configuration and plugin compatibility.  
-Projects depending on older browsers or legacy utilities must test and adjust accordingly.
-
-### Migration Phase
+### Migration Steps
 
 1. **Upgrade and Toolchain**
-   - Run: `npx @tailwindcss/upgrade@latest`
-   - Install: `@tailwindcss/postcss` and `@tailwindcss/cli`
+   - `npx @tailwindcss/upgrade@latest`
+   - `npm i -D @tailwindcss/cli @tailwindcss/postcss`
 2. **Config Review**
-   - Update theme tokens to use CSS variables.
-3. **Audit Utilities**
-   - Replace deprecated utilities and confirm plugin compatibility.
-4. **Validation**
-   - Perform visual regression testing across mobile, tablet, and desktop.
+   - Migrate theme tokens to CSS variables.
+3. **Plugin Check**
+   - Validate shadcn/ui and any other plugin compatibility.
+4. **Testing**
+   - Perform regression testing across sm, md, lg viewports.
+
+---
 
 ## 7. Acceptance Criteria
 
-- Inventory of all components requiring mobile optimization.
-- Specific solutions documented for each responsive issue.
-- Recommended breakpoint strategy and spacing guidelines.
-- Estimated effort and prioritization for implementation.
-- Implementation order for gradual rollout.
-- Tailwind v4 migration guidance and testing plan.
+- Tailwind v4 successfully migrated and stable.
+- Collapsible sidebar fully functional on <lg.
+- No layout overflow or hidden content on mobile.
+- Tables, cards, and modals adapt correctly.
+- Typography and spacing scale cleanly across all breakpoints.
+- QA validated on iOS, Android, and desktop.
 
 ---
 
-## 9. Next Steps
+## 8. Next Steps
 
-1. Validate the audit findings with screenshots and confirm affected components.
-2. Approve proposed navigation restructuring and layout strategy.
-3. Schedule Tailwind v4 migration after core layout fixes are stable.
-4. Begin development of the new responsive layout (drawer, search relocation).
-5. Establish QA sessions for testing responsiveness on major mobile devices.
+1. Approve the **drawer-first layout strategy**.
+2. Execute Tailwind v4 migration.
+3. Implement the new header + drawer navigation.
+4. Refactor search and key layouts.
+5. Test responsiveness across devices and document results.
