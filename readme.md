@@ -91,14 +91,14 @@ Data tables overflow horizontally with no visual indicators.
 ![alt text](image-10.png)
 
 Multi-column grids do not adjust gracefully on mobile, causing visual imbalance.  
-**Recommendation:** Reduce to a single-column layout on smaller screens and adjust spacing.
+**Recommendation:** Reduce to a single-column layout on smaller screens and adjust spacing. - **Hidding sidebar in the mobil version provides good part of the solution for this**
 
 ### 8. Description Lists
 
 ![alt text](image-11.png)
 
 Two-column layouts become cramped, squeezing text into unreadable widths.  
-**Recommendation:** Stack label-value pairs vertically on mobile and use smaller typography.
+**Recommendation:** Stack label-value pairs vertically on mobile and use smaller typography. - **Hidding sidebar in the mobil version provides good part of the solution for this**
 
 ### 9. Touch Targets and Interaction
 
@@ -109,42 +109,28 @@ Buttons and form inputs may not meet accessibility standards for touch.
 
   **Recommendation:** Ensure a minimum target size of 44x44px. Increase padding for mobile elements.
 
-### 10. Container Padding
-
-Fixed large paddings are used throughout the layout.  
-**Recommendation:** Use responsive padding utilities (e.g., smaller padding on mobile) to maximize available space.
-
 ### 11. Typography Scaling
 
 Heading sizes and text spacing optimized for desktop appear too large on mobile.  
-**Recommendation:** Reduce font sizes and increase line heights for better readability on smaller screens.
-
-### 12. Missing Touch Feedback
-
-Many interactive elements lack tactile feedback for touch interactions.  
-**Recommendation:** Introduce visual/tactile states (e.g., opacity changes or highlights) for touch interactions.
+**Recommendation:** Reduce font sizes and increase line heights for better readability on smaller screens. - **Hidding sidebar in the mobile version provides good part of the solution for this**
 
 ### 13. Modal and Overlay Testing
 
-Popovers, dropdowns, and modals have not been fully tested on mobile devices.  
+![alt text](image-18.png)
+
+Modal content container can be better utilized,Touch targets may be small for mobile devices
 **Recommendation:** Test and redesign modals to adapt as full-width sheets on smaller screens.
-
-### 14. Scroll Indicators
-
-Horizontal scroll areas lack cues to indicate more content exists offscreen.  
-**Recommendation:** Add gradient or shadow-based scroll indicators to guide user navigation.
 
 ### 15. Column Visibility Controls
 
-All table columns render by default, overwhelming small screens.  
-**Recommendation:** Introduce conditional rendering for columns based on screen size or user selection.
+All table columns render by default, overwhelming small screens.
+![alt text](image-19.png)
+
+**Recommendation:** Introduce a simple scroll to enable user to view more info about the transaction without breaking other parts of the layout .
+
+![alt text](image-20.png)
 
 ### 16. Vertical Spacing
-
-Large gaps optimized for desktop make mobile layouts excessively tall.  
-**Recommendation:** Adjust gap utilities per breakpoint to maintain balance and reduce unnecessary scroll length.
-
----
 
 ## 3. Recommended Information Architecture (Mobile-First)
 
