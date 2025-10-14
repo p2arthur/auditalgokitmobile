@@ -1,10 +1,15 @@
-# AlgoKit Lora — Mobile Responsiveness Audit (v0.2)
+# AlgoKit Lora — Mobile Responsiveness Audit (v0.4)
+
+📁 **Figma Study & Prototypes:**  
+[https://www.figma.com/design/HRHVr8iBuuIDhLgX2xcCxT/Lora-responsiveness-audit?node-id=68-137&t=oJMQrIBab6WO18zt-1](https://www.figma.com/design/HRHVr8iBuuIDhLgX2xcCxT/Lora-responsiveness-audit?node-id=68-137&t=oJMQrIBab6WO18zt-1)
+
+---
 
 ## 1. Scope and Goals
 
 ### Scope
 
-- Layout shell (header, topbar, sidebar, main content, footer)
+- Layout shell (header, topbar, sidebar, main content)
 - Navigation (primary, secondary, search)
 - Data display (tables, grids, description lists)
 - Forms and inputs
@@ -16,7 +21,7 @@
 
 - Ensure the application is fully usable and visually consistent across all devices.
 - Eliminate layout overflow and cramped elements on mobile.
-- Adopt a mobile-first structure using Tailwind v4’s improved utilities and container queries.
+- Adopt a **mobile-first structure** using Tailwind v4’s improved utilities and container queries.
 - Simplify and unify spacing and typography across breakpoints.
 
 ### Recommended Breakpoints
@@ -24,34 +29,36 @@
 - **Mobile:** <640px
 - **Tablet:** 640–1024px
 - **Desktop:** >1024px
-- **XL Desktop:** >1280px (optional)
 
 ---
 
 ## 2. Key Findings
 
-### 1. Header/Topbar Cramping
+### 1. Header / Topbar Cramping
 
 On smaller screens, elements like the logo, search bar, network selector, and wallet button overlap or overflow.
 
 ### 2. Sidebar Space Usage
 
-The sidebar remains visible on mobile, consuming excessive space and pushing content.
+The sidebar remains visible on mobile, consuming excessive space and pushing content out of view.
 
 ### 3. Hidden Search on Mobile
 
 The search bar disappears completely on small viewports.
 
-![alt text](image-2.png) ![alt text](image-6.png)
+![alt text](image-2.png)  
+![alt text](image-6.png)
 
 **Recommendation:**  
-Move the sidebar to a **collapsible drawer** triggered by a hamburger menu. Relocate the search, theme selector, and settings inside this drawer for mobile use.
+Move the sidebar to a **collapsible drawer** triggered by a hamburger menu.  
+Relocate the search, theme selector, and settings inside this drawer for mobile use.
 
 **Recommendation:**  
 Keep the sidebar visible only on desktop.  
-Use a minimal header with compact logo, screen title, and essential icons.
+Use a **minimal header** with compact logo, screen title, and essential icons for mobile.
 
-![alt text](image-3.png)![alt text](image-4.png)
+![alt text](image-3.png)  
+![alt text](image-4.png)
 
 ### Applied Example
 
@@ -66,19 +73,20 @@ Data tables overflow horizontally without scroll cues.
 ![alt text](image-7.png)
 
 **Recommendation:**  
-Enable horizontal scrolling with clear visual indicators. For mobile, use stacked card layouts when necessary.
+Enable horizontal scrolling with clear indicators.  
+For mobile, use **stacked card layouts** when appropriate.
 
 ---
 
-### 5. Unresponsive “Latest Block” and “Latest Transaction” Cards
+### 5. “Latest Block” and “Latest Transaction” Cards
 
 ![alt text](image-15.png)
 
 **Recommendation:**  
 Switch to a vertical (two-row) layout on smaller screens.  
-This issue is largely resolved by hiding the sidebar on mobile.
+This issue will largely be **resolved by hiding the sidebar** on mobile.
 
-![alt text](image-17.png)
+![alt text](image-17.png)  
 ![alt text](image-16.png)
 
 ---
@@ -86,11 +94,12 @@ This issue is largely resolved by hiding the sidebar on mobile.
 ### 6. Grid and Description Lists
 
 ![alt text](image-10.png)  
-![alt text](image-11.png)
+![alt text](image-11.png)  
+![alt text](image-22.png)
 
-Multi-column grids and two-column lists become cramped on small screens.  
-**Recommendation:** Collapse into a single-column layout and allow more vertical spacing.  
-Hiding the sidebar improves this naturally.
+Multi-column grids and two-column lists are responsive but become cramped on small screens.  
+**Recommendation:**  
+These layouts will naturally improve once the sidebar is collapsed.
 
 ---
 
@@ -98,12 +107,14 @@ Hiding the sidebar improves this naturally.
 
 ![alt text](image-14.png)
 
-Buttons and form inputs may be too small for mobile touch interactions.  
-Headings and text spacing are also optimized for desktop and feel oversized on mobile.
+Buttons and form inputs may be too small for touch interactions.
+
+**Typography:** Already suitable for mobile devices — **no major changes needed.**  
+Spacing adjustments and minor padding refinements are sufficient.
 
 **Recommendation:**  
-Increase tap area, and reduce heading sizes with better line height.  
-Sidebar removal provides enough room for these fixes.
+Increase tap areas for buttons and interactive elements.  
+Sidebar removal will provide enough space for these improvements.
 
 ---
 
@@ -111,8 +122,8 @@ Sidebar removal provides enough room for these fixes.
 
 ![alt text](image-18.png)
 
-Modals could better adapt to mobile screens.  
-**Recommendation:** Convert to full-width sheets on smaller devices.
+**Observation:** Some modals don’t scale well on smaller screens.  
+**Recommendation:** Convert modal windows into **full-width sheets** on mobile for smoother UX.
 
 ---
 
@@ -120,10 +131,10 @@ Modals could better adapt to mobile screens.
 
 ![alt text](image-19.png)
 
-All table columns render by default, overwhelming small screens.
+All columns render by default, overwhelming small screens.
 
 **Recommendation:**  
-Allow horizontal scroll or hide non-essential columns on mobile.
+Enable horizontal scroll or hide non-essential columns for mobile layouts.
 
 ![alt text](image-20.png)
 
@@ -136,11 +147,12 @@ Allow horizontal scroll or hide non-essential columns on mobile.
 - Replace persistent sidebar with a **collapsible drawer** accessed via hamburger menu.
 - Move search, navigation links, theme selector, and settings into this drawer.
 - Keep a minimal topbar with logo, title, and key action icons.
+- Ensure scroll and layout transitions are smooth when opening/closing the drawer.
 
 ### Desktop
 
-- Retain sidebar and main navigation as-is.
-- Maintain central content alignment and consistent padding.
+- Retain the sidebar and navigation as-is.
+- Maintain central content alignment and consistent padding across breakpoints.
 
 ---
 
@@ -154,8 +166,8 @@ Allow horizontal scroll or hide non-essential columns on mobile.
 | Cards              | Two-column layout issues | Stack vertically              | Small  | P1       |
 | Grids/Descriptions | Cramped layouts          | Collapse into single column   | Small  | P1       |
 | Forms              | Small touch targets      | Increase spacing              | Medium | P1       |
-| Typography         | Oversized on mobile      | Adjust scales and line height | Small  | P2       |
-| Modals/Overlays    | Not optimized for mobile | Convert to full-width sheets  | Medium | P2       |
+| Modals/Overlays    | Not optimized for mobile | Better height usage           | Medium | P2       |
+| Typography         | Good as-is               | No changes needed             | None   | P3       |
 
 ---
 
@@ -166,8 +178,9 @@ Allow horizontal scroll or hide non-essential columns on mobile.
 3. **Search Relocation (P0):** Move into drawer, add header trigger.
 4. **Tables (P0):** Add scroll or stacked layout for mobile.
 5. **Cards, Grids, Descriptions (P1):** Adjust to one-column layouts.
-6. **Forms & Typography (P1/P2):** Improve spacing and readability.
+6. **Forms & Touch Targets (P1):** Improve spacing and clickability.
 7. **Overlays (P2):** Convert modals into adaptive sheets.
+8. **Typography (P3):** Retain as-is; ensure scale consistency.
 
 ---
 
@@ -175,40 +188,37 @@ Allow horizontal scroll or hide non-essential columns on mobile.
 
 Upgrading from **v3.4.1 → v4.0** enables:
 
-- Faster build times.
-- Automatic content detection.
-- CSS variable theming.
-- Container queries and color functions.
+- Faster build times
+- Automatic content detection
+- CSS variable theming
+- Container queries and color functions
 
 ### Migration Steps
 
-1. **Upgrade and Toolchain**
-   - `npx @tailwindcss/upgrade@latest`
-   - `npm i -D @tailwindcss/cli @tailwindcss/postcss`
-2. **Config Review**
-   - Migrate theme tokens to CSS variables.
-3. **Plugin Check**
-   - Validate shadcn/ui and any other plugin compatibility.
-4. **Testing**
-   - Perform regression testing across sm, md, lg viewports.
-
----
-
-## 7. Acceptance Criteria
-
-- Tailwind v4 successfully migrated and stable.
-- Collapsible sidebar fully functional on <lg.
-- No layout overflow or hidden content on mobile.
-- Tables, cards, and modals adapt correctly.
-- Typography and spacing scale cleanly across all breakpoints.
-- QA validated on iOS, Android, and desktop.
-
----
-
-## 8. Next Steps
-
-1. Approve the **drawer-first layout strategy**.
-2. Execute Tailwind v4 migration.
-3. Implement the new header + drawer navigation.
-4. Refactor search and key layouts.
-5. Test responsiveness across devices and document results.
+1. **Upgrade Toolchain**
+   ```bash
+   npx @tailwindcss/upgrade@latest
+   npm i -D @tailwindcss/cli @tailwindcss/postcss
+   Config Review
+   Migrate theme tokens to CSS variables.
+   Plugin Check
+   Validate shadcn/ui and other plugin compatibility.
+   Testing
+   Regression test across sm, md, and lg breakpoints.
+   ```
+2. Acceptance Criteria
+   Tailwind v4 migration completed and stable.
+   Collapsible sidebar fully functional below lg.
+   No layout overflow or hidden content on mobile.
+   Tables, cards, and modals adapt properly.
+   Typography and spacing scale correctly.
+   QA validated across iOS, Android, and desktop devices.
+3. Next Steps
+   Approve the drawer-first layout strategy.
+   Execute Tailwind v4 migration.
+   Implement the new header + drawer navigation.
+   Refactor search and related UI elements.
+   Conduct mobile QA testing and document final screenshots.
+   ✅ Summary Note:
+   Most responsiveness challenges will be resolved or smoothed out once the sidebar becomes collapsible.
+   Typography already performs well across mobile and tablet screens — the focus should remain on layout restructuring, spacing, and touch optimization.
