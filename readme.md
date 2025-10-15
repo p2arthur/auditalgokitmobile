@@ -65,6 +65,12 @@ Use a **minimal header** with compact logo, screen title, and essential icons fo
 
 ![alt text](image-24.png)
 
+### Suggestion
+
+Spam whole width of the viewport for drawer menu in mobile
+
+![alt text](image-25.png)
+
 https://www.figma.com/design/HRHVr8iBuuIDhLgX2xcCxT/Lora-responsiveness-audit?node-id=0-1&t=oJMQrIBab6WO18zt-1
 
 ---
