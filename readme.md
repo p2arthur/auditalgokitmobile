@@ -158,15 +158,15 @@ Enable horizontal scroll or hide non-essential columns for mobile layouts.
 
 ## 4. Component Summary
 
-| Area               | Current Issue            | Recommended Fix               | Effort | Priority |
-| ------------------ | ------------------------ | ----------------------------- | ------ | -------- |
-| Topbar             | Overlapping elements     | Move search into drawer       | Medium | P0       |
-| Sidebar            | Visible on mobile        | Convert to collapsible drawer | Small  | P0       |
-| Tables             | Overflow on mobile       | Scrollable or stacked layout  | Large  | P0       |
-| Cards              | Two-column layout issues | Stack vertically              | Small  | P1       |
-| Grids/Descriptions | Cramped layouts          | Collapse into single column   | Small  | P1       |
-| Forms              | Small touch targets      | Increase spacing              | Medium | P1       |
-| Modals/Overlays    | Not optimized for mobile | Better height usage           | Medium | P2       |
+| Area               | Current Issue            | Recommended Fix               | Effort | Priority | Component                                  |
+| ------------------ | ------------------------ | ----------------------------- | ------ | -------- | ------------------------------------------ |
+| Topbar             | Overlapping elements     | Move search into drawer       | Medium | P0       | header.tsx                                 |
+| Sidebar            | Visible on mobile        | Convert to collapsible drawer | Medium | P0       | left-side-bar-menu.tsx.                    |
+| Tables             | Overflow on mobile       | Scrollable or stacked layout  | Medium | P0       | transactions-builder.tsx                   |
+| Cards              | Two-column layout issues | Stack containers vertically   | Medium | P1       | latest-blocks.tsx, latest-transactions.tsx |
+| Grids/Descriptions | Cramped layouts          | Collapse into single column   | Small  | P1       | create-app-interface-page.tsx              |
+| Forms              | Small touch targets      | Increase touch targets size   | Small  | P1       | switch.tsx                                 |
+| Modals/Overlays    | Not optimized for mobile | Better height usage           | Small  | P2       | transaction-builder.tsx                    |
 | Typography         | Good as-is               | No changes needed             | None   | P3       |
 
 ---
