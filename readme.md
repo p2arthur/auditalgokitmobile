@@ -9,12 +9,12 @@
 
 ### Scope
 
-- Layout shell (header, topbar, sidebar, main content)
-- Navigation (primary, secondary, search)
-- Data display (tables, grids, description lists)
-- Forms and inputs
-- Overlays (modals, popovers, drawers, dropdowns)
-- Typography, spacing, touch targets, and interaction feedback
+- Layout shell (header, sidebar, main content)
+- Navigation (page navigation, search)
+- Data display (tables, grids, data cards)
+- Form inputs
+- Overlays (modals)
+- Typography, touch targets
 - Tailwind v4 readiness and migration implications
 
 ### Goals
@@ -24,7 +24,7 @@
 - Adopt a **mobile-first structure** using Tailwind v4’s improved utilities and container queries.
 - Simplify and unify spacing and typography across breakpoints.
 
-### Recommended Breakpoints
+### Suggested Breakpoints
 
 - **Mobile:** <640px
 - **Tablet:** 640–1024px
@@ -34,7 +34,7 @@
 
 ## 2. Key Findings
 
-### 1. Header / Topbar Cramping
+### 1. Header / Topbar Cramping - header.tsx
 
 On smaller screens, elements like the logo, search bar, network selector, and wallet button overlap or overflow.
 
@@ -42,18 +42,18 @@ On smaller screens, elements like the logo, search bar, network selector, and wa
 
 The sidebar remains visible on mobile, consuming excessive space and pushing content out of view.
 
-### 3. Hidden Search on Mobile
+### 3. Hidden Search on Mobile - header.tsx
 
 The search bar disappears completely on small viewports.
 
 ![alt text](image-2.png)  
 ![alt text](image-6.png)
 
-**Recommendation:**  
+**Proposal:**  
 Move the sidebar to a **collapsible drawer** triggered by a hamburger menu.  
 Relocate the search, theme selector, and settings inside this drawer for mobile use.
 
-**Recommendation:**  
+**Proposal:**  
 Keep the sidebar visible only on desktop.  
 Use a **minimal header** with compact logo, screen title, and essential icons for mobile.
 
@@ -64,6 +64,8 @@ Use a **minimal header** with compact logo, screen title, and essential icons fo
 
 ![alt text](image-5.png)
 
+https://www.figma.com/design/HRHVr8iBuuIDhLgX2xcCxT/Lora-responsiveness-audit?node-id=0-1&t=oJMQrIBab6WO18zt-1
+
 ---
 
 ### 4. Unresponsive Tables
@@ -72,7 +74,7 @@ Data tables overflow horizontally without scroll cues.
 
 ![alt text](image-7.png)
 
-**Recommendation:**  
+**Proposal:**  
 Enable horizontal scrolling with clear indicators.  
 For mobile, use **stacked card layouts** when appropriate.
 
@@ -82,7 +84,7 @@ For mobile, use **stacked card layouts** when appropriate.
 
 ![alt text](image-15.png)
 
-**Recommendation:**  
+**Proposal:**  
 Switch to a vertical (two-row) layout on smaller screens.  
 This issue will largely be **resolved by hiding the sidebar** on mobile.
 
@@ -98,7 +100,7 @@ This issue will largely be **resolved by hiding the sidebar** on mobile.
 ![alt text](image-22.png)
 
 Multi-column grids and two-column lists are responsive but become cramped on small screens.  
-**Recommendation:**  
+**Proposal:**  
 These layouts will naturally improve once the sidebar is collapsed.
 
 ---
@@ -112,7 +114,7 @@ Buttons and form inputs may be too small for touch interactions.
 **Typography:** Already suitable for mobile devices — **no major changes needed.**  
 Spacing adjustments and minor padding refinements are sufficient.
 
-**Recommendation:**  
+**Proposal:**  
 Increase tap areas for buttons and interactive elements.  
 Sidebar removal will provide enough space for these improvements.
 
@@ -123,7 +125,7 @@ Sidebar removal will provide enough space for these improvements.
 ![alt text](image-18.png)
 
 **Observation:** Some modals don’t scale well on smaller screens.  
-**Recommendation:** Convert modal windows into **full-width sheets** on mobile for smoother UX.
+**Proposal:** Convert modal windows into **full-width sheets** on mobile for smoother UX.
 
 ---
 
@@ -133,7 +135,7 @@ Sidebar removal will provide enough space for these improvements.
 
 All columns render by default, overwhelming small screens.
 
-**Recommendation:**  
+**Proposal:**  
 Enable horizontal scroll or hide non-essential columns for mobile layouts.
 
 ![alt text](image-20.png)
@@ -189,7 +191,7 @@ Enable horizontal scroll or hide non-essential columns for mobile layouts.
 Upgrading from **v3.4.1 → v4.0** enables:
 
 - Faster build times
-- Automatic content detection
+- Accordance with latest CSS features
 - CSS variable theming
 - Container queries and color functions
 
