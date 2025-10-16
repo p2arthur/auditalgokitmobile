@@ -184,12 +184,12 @@ Enable horizontal scroll or hide non-essential columns for mobile layouts.
 ## 5. Implementation Order
 
 1. **Tailwind v4 Upgrade (P0):** — foundation for all responsive fixes.
-2. **Layout Shell (P0):** Add collapsible drawer, hide sidebar on mobile.
-3. **Search Relocation (P0):** Move into drawer, add header trigger.
-4. **Cards, Grids, Descriptions (P0):** Adjust to one-column layouts.
-5. **Tables (P1):** Add scroll or stacked layout for mobile.
-6. **Forms & Touch Targets (P1):** Improve spacing and clickability.
-7. **Overlays (P2):** Convert modals into adaptive sheets.
+2. **Layout Shell (P0):** Add collapsible drawer, hide sidebar on mobile. - header.tsx, left-sidebar-menu.tsx
+3. **Search Relocation (P0):** Move into drawer, add header trigger. - search.tsx
+4. **Cards, Grids, Descriptions (P0):** Adjust to one-column layouts. - latest-transactions.tsx, latest-blocks.tsx, transactions-builder.tsx
+5. **Tables (P1):** Add scroll or stacked layout for mobile. - transactions-table.tsx
+6. **Forms & Touch Targets (P1):** Improve spacing and clickability. - switch.tsx, transaction-builder.tsx
+7. **Overlays (P2):** Convert modals into adaptive sheets. - transaction-builder.tsx
 8. **Typography (P3):** Retain as-is; ensure scale consistency.
 
 ---
