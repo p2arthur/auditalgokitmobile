@@ -61,7 +61,7 @@ Use a **minimal header** with compact logo, screen title, and essential icons fo
 ![alt text](image-4.png)
 ![alt text](image-23.png)
 
-### Applied Example
+### Applied Example - Ipad pro
 
 ![alt text](image-24.png)
 
@@ -69,7 +69,7 @@ Use a **minimal header** with compact logo, screen title, and essential icons fo
 
 Spam whole width of the viewport for drawer menu in mobile
 
-![alt text](image-25.png)
+![alt text](image-26.png) ![alt text](image-27.png)
 
 https://www.figma.com/design/HRHVr8iBuuIDhLgX2xcCxT/Lora-responsiveness-audit?node-id=0-1&t=oJMQrIBab6WO18zt-1
 
@@ -132,7 +132,8 @@ Sidebar removal will provide enough space for these improvements.
 ![alt text](image-18.png)
 
 **Observation:** Some modals don’t scale well on smaller screens.  
-**Proposal:** Convert modal windows into **full-width sheets** on mobile for smoother UX.
+**Proposal:** Convert modal windows into **full-height sheets** on mobile for smoother UX.
+![alt text](image-28.png)
 
 ---
 
@@ -171,22 +172,22 @@ Enable horizontal scroll or hide non-essential columns for mobile layouts.
 | ------------------ | ------------------------ | ----------------------------- | ------ | -------- | ------------------------------------------ |
 | Topbar             | Overlapping elements     | Move search into drawer       | Medium | P0       | header.tsx                                 |
 | Sidebar            | Visible on mobile        | Convert to collapsible drawer | Medium | P0       | left-side-bar-menu.tsx.                    |
-| Tables             | Overflow on mobile       | Scrollable or stacked layout  | Medium | P0       | transactions-builder.tsx                   |
-| Cards              | Two-column layout issues | Stack containers vertically   | Medium | P1       | latest-blocks.tsx, latest-transactions.tsx |
+| Cards              | Two-column layout issues | Stack containers vertically   | Medium | P0       | latest-blocks.tsx, latest-transactions.tsx |
+| Modals/Overlays    | Not optimized for mobile | Better height usage           | Small  | P1       | transaction-builder.tsx                    |
+| Tables             | Overflow on mobile       | Scrollable or stacked layout  | Medium | P1       | transactions-builder.tsx                   |
 | Grids/Descriptions | Cramped layouts          | Collapse into single column   | Small  | P1       | create-app-interface-page.tsx              |
-| Forms              | Small touch targets      | Increase touch targets size   | Small  | P1       | switch.tsx                                 |
-| Modals/Overlays    | Not optimized for mobile | Better height usage           | Small  | P2       | transaction-builder.tsx                    |
+| Forms              | Small touch targets      | Increase touch targets size   | Small  | P2       | switch.tsx                                 |
 | Typography         | Good as-is               | No changes needed             | None   | P3       |
 
 ---
 
 ## 5. Implementation Order
 
-1. **Tailwind v4 Upgrade** — foundation for all responsive fixes.
+1. **Tailwind v4 Upgrade (P0):** — foundation for all responsive fixes.
 2. **Layout Shell (P0):** Add collapsible drawer, hide sidebar on mobile.
 3. **Search Relocation (P0):** Move into drawer, add header trigger.
-4. **Tables (P0):** Add scroll or stacked layout for mobile.
-5. **Cards, Grids, Descriptions (P1):** Adjust to one-column layouts.
+4. **Cards, Grids, Descriptions (P0):** Adjust to one-column layouts.
+5. **Tables (P1):** Add scroll or stacked layout for mobile.
 6. **Forms & Touch Targets (P1):** Improve spacing and clickability.
 7. **Overlays (P2):** Convert modals into adaptive sheets.
 8. **Typography (P3):** Retain as-is; ensure scale consistency.
