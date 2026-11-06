@@ -1,3 +1,16 @@
+# AlgoKit Lora Mobile Responsiveness Audit
+
+A UX assessment of AlgoKit Lora on mobile, with screenshots, layout findings, and linked design prototypes.
+
+This repository is a design and documentation artifact. The audit covers navigation, forms, tables, and responsive layouts; it does not contain the Lora application or claim to implement the proposed fixes.
+
+## Existing project notes
+
+The original guide below preserves project-specific context, credits, examples, and historical setup details. Referenced providers, branches, and deployments may have changed since it was written.
+
+<details>
+<summary>Read the original project documentation</summary>
+
 # AlgoKit Lora — Mobile Responsiveness Audit (v0.4)
 
 📁 **Figma Study & Prototypes:**  
@@ -231,3 +244,5 @@ Upgrading from **v3.4.1 → v4.0** enables:
    ✅ Summary Note:
    Most responsiveness challenges will be resolved or smoothed out once the sidebar becomes collapsible.
    Typography already performs well across mobile and tablet screens — the focus should remain on layout restructuring, spacing, and touch optimization.
+
+</details>
